@@ -1,26 +1,18 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import styles from "./index.module.less";
-import Page404 from "pages/erreo";
 import { useStore } from "hooks/useStore";
-import Input from "antd/lib/input/Input";
-import { StepBackwardOutlined } from "@ant-design/icons";
 import { observer } from "mobx-react";
 
 const Index = () => {
     const store = useStore();
+    const domRef = useRef(null);
+    useEffect(() => {
+        store.initEngine(domRef.current);
+    }, []);
     return (
-        <div
-            className={styles.page}
-            onClick={() => {
-                store.name = "12";
-            }}
-        >
-            {store.name}
-            {/* <Button>asdasd</Button> */}
-            <Page404 />
-            {/* index */}
-            <Input />
-            <StepBackwardOutlined />
+        <div className={styles.index}>
+            {/*threejs渲染元素 */}
+            <div className={styles.canvas} ref={domRef} />
         </div>
     );
 };

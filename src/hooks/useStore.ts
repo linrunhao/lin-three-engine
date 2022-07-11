@@ -1,6 +1,4 @@
 import React from "react";
-
-//
 import { StoresContext } from "stores/index";
 
 export const useStore = () => {

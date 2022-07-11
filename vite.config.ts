@@ -13,16 +13,14 @@ export default defineConfig({
             stores: path.resolve(__dirname, "./src/stores"),
             components: path.resolve(__dirname, "./src/components"),
             styles: path.resolve(__dirname, "./src/styles"),
+            engine: path.resolve(__dirname, "./src/engine"),
         },
     },
     css: {
         preprocessorOptions: {
             less: {
                 javascriptEnabled: true,
-                additionalData: `@import "${path.resolve(
-                    __dirname,
-                    "src/styles/index.less"
-                )}";`,
+                additionalData: `@import "${path.resolve(__dirname, "src/styles/index.less")}";`,
             },
         },
     },
