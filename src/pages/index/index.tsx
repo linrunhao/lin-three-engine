@@ -8,14 +8,11 @@ import { observer } from "mobx-react";
 
 const Index = () => {
     const store = useStore();
-    console.log(12);
-
     return (
         <div
             className={styles.page}
             onClick={() => {
                 store.name = "12";
-                console.log(store);
             }}
         >
             {store.name}
