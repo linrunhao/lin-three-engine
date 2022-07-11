@@ -1,0 +1,6 @@
+**/*.svg
+package.json
+/build
+.prettierrc
+.eslintrc
+.eslintignore

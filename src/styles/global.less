@@ -1,0 +1,131 @@
+/* 定义多个全局样式 */
+:global {
+  /* 公共样式--开始 */
+  html,
+  body,
+  div,
+  ul,
+  li,
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  p,
+  dl,
+  dt,
+  dd,
+  ol,
+  form,
+  input,
+  textarea,
+  th,
+  td,
+  select {
+      margin: 0;
+      padding: 0;
+  }
+  * {
+      box-sizing: border-box;
+      touch-action: pan-y;
+      // 滚动条两端的按钮
+      &::-webkit-scrollbar-button {
+          display: none;
+      }
+      // 内层轨道，滚动条中间部分
+      &::-webkit-scrollbar-track-piece {
+          visibility: hidden;
+      }
+      // 边角
+      &::-webkit-scrollbar-corner {
+          border-radius: 10px;
+      }
+  }
+  html,
+  body {
+      height: 100%;
+      min-height: 100%;
+      margin: 0;
+  }
+
+  body {
+      font-family: "PingFang SC", "Hiragino Sans GB", "Heiti SC", "Microsoft YaHei", "WenQuanYi Micro Hei";
+      -webkit-font-smoothing: antialiased;
+  }
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+      font-weight: normal;
+  }
+  ul,
+  ol {
+      list-style: none;
+  }
+
+  img {
+      vertical-align: middle;
+      border: none;
+  }
+
+  a {
+      color: #232323;
+      text-decoration: none;
+  }
+
+  table {
+      table-layout: fixed;
+      border-collapse: collapse;
+  }
+
+  input,
+  textarea {
+      border: none;
+      outline: none;
+  }
+
+  textarea {
+      overflow: auto;
+      resize: none;
+  }
+
+  #app {
+      height: 100vh;
+  }
+
+  #__next {
+      height: 100vh;
+  }
+
+  /* 公共样式--结束 */
+  .tipsIcon {
+      margin-right: 8px;
+      color: #ffbb5d;
+      vertical-align: sub;
+  }
+
+  // 右键菜单
+  .react-contextmenu--visible {
+      z-index: 9999;
+      border-radius: 2px;
+      box-shadow: 0.5px 0.5px 5px #ececec !important;
+  }
+
+  .react-contextmenu-item {
+      width: 120px;
+      height: 30px;
+      color: #555;
+      line-height: 30px;
+      text-indent: 16px;
+      background-color: white;
+      cursor: pointer;
+
+      &:hover {
+          color: #007aff;
+          background-color: #f6f7f8;
+      }
+  }
+}
