@@ -1,0 +1,43 @@
+.toolbar{
+  height: 54px;
+  display: flex;
+  align-items: center;
+  background: rgba(18, 19, 23, 0.9);
+  border-radius: 15px;  
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 60px;
+  padding: 0 10px ;
+  .item{
+    width: 36px;
+    height: 36px;
+    margin: 0 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    &:hover{
+      background: rgba(255, 255, 255, 0.05);
+      border-radius: 8px;
+    }
+    .file_input{
+      width: 100%;
+      height: 100%;
+      opacity: 0;
+      position: absolute;
+      cursor: pointer;
+      top: 0;
+      left: 0;
+    }
+  }
+  svg{
+    fill: #fff;
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+  }
+ 
+}

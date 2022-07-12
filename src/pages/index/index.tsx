@@ -2,17 +2,19 @@ import React, { useEffect, useRef } from "react";
 import styles from "./index.module.less";
 import { useStore } from "hooks/useStore";
 import { observer } from "mobx-react";
+import Toolbar from "./components/Toolbar";
 
 const Index = () => {
     const store = useStore();
     const domRef = useRef(null);
     useEffect(() => {
-        store.initEngine(domRef.current);
+        !store.engine && store.initEngine(domRef.current);
     }, []);
     return (
         <div className={styles.index}>
             {/*threejs渲染元素 */}
-            <div className={styles.canvas} ref={domRef} />
+            <canvas className={styles.canvas} id='three' ref={domRef} />
+            <Toolbar />
         </div>
     );
 };
